@@ -61,6 +61,12 @@ exports.getMyTours = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.getSingupForm = (req, res) => {
+  res.status(200).render('signup', {
+    title: 'create your account!',
+  });
+};
+
 exports.updateUserData = catchAsync(async (req, res, next) => {
   console.log(req.body);
   const updatedUser = await User.findByIdAndUpdate(
